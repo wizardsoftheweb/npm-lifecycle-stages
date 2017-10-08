@@ -42,6 +42,7 @@
     "@types/sinon": "^2.3.5",
     "@types/sinon-chai": "^2.7.29",
     "@types/winston": "^2.3.6",
+    "@wizardsoftheweb/logs-with-winston": "^0.3.5",
     "@wizardsoftheweb/nyc-config-typescript": "^1.1.0",
     "bluebird": "^3.5.1",
     "chai": "^4.1.2",
@@ -50,17 +51,15 @@
     "mocha": "^3.5.3",
     "nyc": "^11.2.1",
     "proxyquire": "^1.8.0",
+    "shelljs": "^0.7.8",
     "sinon": "^3.3.0",
     "sinon-chai": "^2.13.0",
     "ts-node": "^3.3.0",
     "tslint": "^5.7.0",
-    "typescript": "^2.5.2"
-  },
-  "dependencies": {
-    "@wizardsoftheweb/logs-with-winston": "^0.3.5",
-    "shelljs": "^0.7.8",
+    "typescript": "^2.5.2",
     "winston": "^2.4.0"
   },
+  "dependencies": {},
   "engines": {
     "npm": ">=5",
     "node": ">=6"
