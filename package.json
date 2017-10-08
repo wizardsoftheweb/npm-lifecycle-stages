@@ -11,8 +11,8 @@
     "lib": "./dist/lib"
   },
   "scripts": {
-    "preversion": "npm run lint && npm test",
-    "postversion": "git push && git push --tags",
+    "preversion": "git checkout master && git merge --no-ff dev && npm run lint && npm test",
+    "postversion": "git push && git push --tags && git checkout dev && git rebase master",
     "prepublishOnly": "ts-node build-package",
     "postpublish": "ts-node build-examples",
     "test": "cross-env NODE_ENV=test nyc mocha",
