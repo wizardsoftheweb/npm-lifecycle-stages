@@ -13,6 +13,7 @@ test/**/*.js
 test/**/*.map
 # Generated folders that should always be regenerated
 .replaceTmp
+.lifecycleTmp
 .nyc_output
 coverage
 logs
