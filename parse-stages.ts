@@ -81,9 +81,8 @@ if (semver.gt(registryVersion, localVersion)) {
     shelljs.cd(npmTmpDir);
     shelljs.exec("git clone https://github.com/npm/npm.git .");
     shelljs.exec("git fetch --all --tags");
-    shelljs.exec("git checkout latest");
-    shelljs.exec("git branch -D lifecycle-local");
-    shelljs.exec(`git checkout tags/${registryVersion} -b lifecycle-local`);
+    shelljs.exec("git rev-parse --verify test && git branch -D test || echo 0");
+    shelljs.exec(`git checkout 'tags/${registryVersion}' -b lifecycle-local`);
     shelljs.exec("npm install");
 }
 
