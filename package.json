@@ -7,14 +7,11 @@
   ],
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "directories": {
-    "lib": "./dist/lib"
-  },
   "scripts": {
-    "preversion": "npm run lint && npm test",
-    "postversion": "git push && git push --tags",
-    "prepublishOnly": "ts-node build-package",
-    "postpublish": "ts-node build-examples",
+    "preversion": "git checkout master && git merge --no-ff dev && npm run lint && npm test",
+    "postversion": "git push && git push --tags && git checkout dev && git rebase master",
+    "prepublishOnly": "ts-node build-package && npm run lint && npm test",
+    "postpublish": "rm -rf dist",
     "test": "cross-env NODE_ENV=test nyc mocha",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "compile:declarations": "tsc -p tsconfig.declarations.json",
@@ -32,43 +29,38 @@
   },
   "homepage": "https://github.com/wizardsoftheweb/npm-lifecycle-stages#readme",
   "devDependencies": {
-    "@types/bluebird": "^3.5.14",
     "@types/chai": "^4.0.4",
     "@types/mocha": "^2.2.43",
     "@types/node": "^8.0.33",
     "@types/npm": "^2.0.29",
-    "@types/proxyquire": "^1.3.28",
+    "@types/semver": "^5.4.0",
     "@types/shelljs": "^0.7.4",
-    "@types/sinon": "^2.3.5",
-    "@types/sinon-chai": "^2.7.29",
     "@types/winston": "^2.3.6",
     "@wizardsoftheweb/nyc-config-typescript": "^1.1.0",
-    "bluebird": "^3.5.1",
     "chai": "^4.1.2",
     "coveralls": "^2.13.1",
     "cross-env": "^5.0.5",
     "mocha": "^3.5.3",
     "nyc": "^11.2.1",
-    "proxyquire": "^1.8.0",
-    "sinon": "^3.3.0",
-    "sinon-chai": "^2.13.0",
+    "semver": "^5.4.1",
+    "shelljs": "^0.7.8",
     "ts-node": "^3.3.0",
     "tslint": "^5.7.0",
-    "typescript": "^2.5.2"
-  },
-  "dependencies": {
-    "@wizardsoftheweb/logs-with-winston": "^0.3.5",
-    "shelljs": "^0.7.8",
+    "typescript": "^2.5.2",
     "winston": "^2.4.0"
   },
+  "dependencies": {},
   "engines": {
     "npm": ">=5",
     "node": ">=6"
   },
   "keywords": [
-    "typescript",
-    "es.next",
-    "decorator",
-    "class decorator"
+    "npm",
+    "lifecycle",
+    "npm-lifecycle",
+    "run-script",
+    "package.json",
+    "npm-scripts",
+    "npm_lifecycle_event"
   ]
 }
