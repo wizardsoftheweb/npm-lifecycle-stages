@@ -12,15 +12,14 @@ src/**/*.map
 test/**/*.js
 test/**/*.map
 # Generated folders that should always be regenerated
-.replaceTmp
-.lifecycleTmp
 .nyc_output
+.npmTmp
+.lifecycleTmp
 coverage
 logs
 docs
 dist
 wizards*.tgz
-**/.binIntegrationTest
 # Personal working files (you might not need these)
 scratch.ts
 swap-out.log
