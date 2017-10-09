@@ -22,17 +22,17 @@ As it turns out, getting programmatic access to NPM's lifecycle stages is [much 
 ## Installation
 
 ```bash
-npm install --save @wizardsoftheweb/npm-lifecycle-stages
+$ npm install --save @wizardsoftheweb/npm-lifecycle-stages
 ```
 
 ## Tests
 
 In the interest of keeping the final package small, none of the tests are installed. Instead, you'll need to clone the repo.
 ```bash
-git clone https://github.com/wizardsoftheweb/npm-lifecycle-stages.git
-cd npm-lifecycle-stages
-npm install
-npm t
+$ git clone https://github.com/wizardsoftheweb/npm-lifecycle-stages.git
+$ cd npm-lifecycle-stages
+$ npm install
+$ npm t
 ```
 
 ## Usage
@@ -75,7 +75,7 @@ I'd like to see this maintain the semver of the upstream repo, so this feature l
 |     -3% | Test build and runner scripts |
 |    100% | Export the full namespace |
 |    100% | Compile declaration file |
-|     70% | Write docs |
+|     72% | Write docs |
 |      0% | Publish package on `npm` |
 
 ### Eventual features
