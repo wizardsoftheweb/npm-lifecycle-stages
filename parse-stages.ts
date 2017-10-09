@@ -81,8 +81,10 @@ if (semver.neq(registryVersion, localVersion)) {
     shelljs.cd(npmTmpDir);
     shelljs.exec("git clone https://github.com/npm/npm.git .");
     shelljs.exec("git fetch --all --tags");
-    shelljs.exec("git rev-parse --verify test && git branch -D test || echo 0");
-    shelljs.exec(`git checkout 'tags/v${registryVersion}' -b lifecycle-local`);
+    shelljs.exec("git checkout latest");
+    shelljs.exec("git rev-parse --verify lifecycle-local && git branch -D lifecycle-local || echo 0");
+    shelljs.exec(`git checkout tags/v${registryVersion} -b lifecycle-local`);
+    shelljs.exit(0);
     shelljs.exec("npm install");
 }
 
@@ -146,6 +148,8 @@ fs.writeFileSync(
     lifecycleStagesContents,
     "utf-8",
 );
+
+shelljs.cd(__dirname);
 /* tslint:disable-next-line:no-var-requires */
 localVersion = require(`./${path.basename(npmTmpDir)}/package.json`).version;
 if (localVersion === registryVersion) {
