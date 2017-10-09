@@ -54,9 +54,12 @@
     "node": ">=6"
   },
   "keywords": [
-    "typescript",
-    "es.next",
-    "decorator",
-    "class decorator"
+    "npm",
+    "lifecycle",
+    "npm-lifecycle",
+    "run-script",
+    "package.json",
+    "npm-scripts",
+    "npm_lifecycle_event"
   ]
 }
