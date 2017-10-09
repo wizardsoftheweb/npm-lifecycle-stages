@@ -84,7 +84,6 @@ if (semver.neq(registryVersion, localVersion)) {
     shelljs.exec("git checkout latest");
     shelljs.exec("git rev-parse --verify lifecycle-local && git branch -D lifecycle-local || echo 0");
     shelljs.exec(`git checkout tags/v${registryVersion} -b lifecycle-local`);
-    shelljs.exit(0);
     shelljs.exec("npm install");
 }
 
