@@ -7,14 +7,10 @@
   ],
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "directories": {
-    "lib": "./dist/lib"
-  },
   "scripts": {
     "preversion": "git checkout master && git merge --no-ff dev && npm run lint && npm test",
     "postversion": "git push && git push --tags && git checkout dev && git rebase master",
-    "prepublishOnly": "ts-node build-package",
-    "postpublish": "ts-node build-examples",
+    "prepublishOnly": "npm run lint && npm test && ts-node build-package",
     "test": "cross-env NODE_ENV=test nyc mocha",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "compile:declarations": "tsc -p tsconfig.declarations.json",
