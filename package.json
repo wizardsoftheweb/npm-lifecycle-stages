@@ -9,7 +9,7 @@
   "types": "./dist/index.d.ts",
   "scripts": {
     "preversion": "git checkout master && git merge --no-ff dev && npm run lint && npm test",
-    "postversion": "git push && git push --tags && git checkout dev && git rebase master",
+    "postversion": "git push && git push --tags && git checkout dev && git rebase master && git push",
     "prepublishOnly": "ts-node build-package && npm run lint && npm test",
     "postpublish": "rm -rf dist",
     "test": "cross-env NODE_ENV=test nyc mocha",
