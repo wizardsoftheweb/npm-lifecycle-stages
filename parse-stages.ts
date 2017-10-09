@@ -75,14 +75,14 @@ try {
     shelljs.rm("-rf", npmTmpDir);
     shelljs.mkdir(npmTmpDir);
 }
-if (semver.gt(registryVersion, localVersion)) {
+if (semver.neq(registryVersion, localVersion)) {
     logger.info("Pulling upstream updates");
     logger.verbose(`Cloning npm`);
     shelljs.cd(npmTmpDir);
     shelljs.exec("git clone https://github.com/npm/npm.git .");
     shelljs.exec("git fetch --all --tags");
     shelljs.exec("git rev-parse --verify test && git branch -D test || echo 0");
-    shelljs.exec(`git checkout 'tags/${registryVersion}' -b lifecycle-local`);
+    shelljs.exec(`git checkout 'tags/v${registryVersion}' -b lifecycle-local`);
     shelljs.exec("npm install");
 }
 
