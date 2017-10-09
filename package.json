@@ -1,6 +1,6 @@
 {
   "name": "@wizardsoftheweb/npm-lifecycle-stages",
-  "version": "0.0.0",
+  "version": "5.4.2",
   "description": "Parses npm to discover its lifecycle stages",
   "files": [
     "dist"
