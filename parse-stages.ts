@@ -66,7 +66,7 @@ logger.silly(`Registry: ${registryVersion}`);
 let localVersion: string;
 try {
     /* tslint:disable-next-line:no-var-requires */
-    localVersion = require(`${npmTmpDir}/package.json`).version;
+    localVersion = require(`./${path.basename(npmTmpDir)}/package.json`).version;
     logger.silly(`Local: ${localVersion}`);
 } catch (error) {
     logger.silly("Unable to find local copy of NPM");
@@ -147,7 +147,7 @@ fs.writeFileSync(
     "utf-8",
 );
 /* tslint:disable-next-line:no-var-requires */
-localVersion = require(`${npmTmpDir}/package.json`).version;
+localVersion = require(`./${path.basename(npmTmpDir)}/package.json`).version;
 if (localVersion === registryVersion) {
     shelljs.exec(`npm version ${registryVersion}`);
 } else {
