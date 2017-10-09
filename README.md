@@ -57,12 +57,12 @@ Once all of these are finished, I'll release `v1`. Until then, `v0` should be us
 
 | Progess | Feature |
 | ------: | ------- |
-|      0% | Add build action |
-|      0% | Add update action |
+|    100% | Add build action |
+|    100% | Add update action |
 |      0% | Figure out cron action |
-|      0% | Test |
-|      0% | Export the full namespace |
-|      0% | Compile declaration file |
+|     -3% | Test |
+|    100% | Export the full namespace |
+|    100% | Compile declaration file |
 |      0% | Write docs |
 |      0% | Publish package on `npm` |
 
@@ -73,5 +73,3 @@ These are things I'd like to add, but probably won't be included in `v1`. If not
 | Progess | Feature |
 | ------: | ------- |
 |      0% | [Greenkeeper](https://greenkeeper.io/) (or similar) integration |
-|      0% | Create examples|
-|      0% | Containerize examples|
